@@ -1,0 +1,41 @@
+class Student {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+}
+
+class Example {
+    static void updateMarks(Student s, int extra) {
+        s.marks += extra;
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student("Jit", 80);
+        updateMarks(s1, 10);
+        System.out.println(s1.name + " " + s1.marks);
+
+        Circle c = new Circle(3.0);
+        Area areaObj = c.getArea();
+        System.out.println("Area: " + areaObj.value);
+    }
+}
+
+class Circle {
+    double radius;
+
+    Circle(double radius) { this.radius = radius; }
+
+    Area getArea() {
+        double a = Math.PI * radius * radius;
+        return new Area(a);
+    }
+}
+
+class Area {
+    double value;
+    Area(double value) { this.value = value; }
+}
